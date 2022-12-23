@@ -1,0 +1,20 @@
+<div class="content">
+  <header class="header" [class.active-header]="active">
+    <nav class="navigation">
+      <li *ngFor="let item of list" routerLinkActive="link-active">
+        <a [routerLink]=item.src>
+        <span class="icon">
+          <i [class]=item.icon></i>
+        </span>
+          <span class="title">{{item.title}}</span>
+        </a>
+      </li>
+    </nav>
+
+    <div class="toggle" (click)="onToggle()"></div>
+  </header>
+
+  <main [class.active-main]="!active">
+    <router-outlet></router-outlet>
+  </main>
+</div>

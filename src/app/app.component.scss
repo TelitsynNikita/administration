@@ -1,0 +1,136 @@
+.content {
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header {
+  flex: 2 1;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  background-color: #fff;
+  border-radius: 20px;
+  padding-top: 25px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  transition: 0.6s;
+
+  &.active-header {
+    flex: 10 1;
+    transition: 0.6s;
+
+    .toggle::before {
+      transform: translateY(0px) rotate(-405deg);
+    }
+
+    .toggle::after {
+      transform: translateY(0px) rotate(225deg);
+    }
+  }
+
+  .navigation {
+    flex: 13 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+
+    li {
+
+      &:hover {
+        background-color: #4c90ff;
+        border-top-left-radius: 35px;
+        border-bottom-left-radius: 30px;
+      }
+
+      &:hover a {
+        color: #fff;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        gap: 30px;
+        color: #4c90ff;
+
+        .icon {
+          font-size: 1.75em;
+        }
+
+        .title {
+          line-height: 60px;
+          text-align: center;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .toggle {
+    flex: 1 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    margin-right: 7px;
+    margin-bottom: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #4c90ff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 26px;
+      height: 3px;
+      border-radius: 3px;
+      background-color: #fff;
+      transform: translateY(-5px);
+      transition: 1s;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 26px;
+      height: 3px;
+      border-radius: 3px;
+      background-color: #fff;
+      transform: translateY(5px);
+      transition: 1s;
+    }
+  }
+}
+
+main {
+  flex: 40 1;
+  background-color: #fff;
+  min-height: 90vh;
+  border-radius: 20px;
+  transition: 1s;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+
+.active-main {
+  flex: 40 1;
+}
+
+.link-active {
+  background-color: #4c90ff;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 30px;
+
+  a {
+    .icon, .title {
+      color: #fff;
+    }
+  }
+}
