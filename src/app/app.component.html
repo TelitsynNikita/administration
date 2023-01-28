@@ -10,11 +10,13 @@
         </a>
       </li>
     </nav>
-
     <div class="toggle" (click)="onToggle()"></div>
   </header>
 
   <main [class.active-main]="!active">
+    <ul>
+      <li *ngFor="let string of data">{{string}}</li>
+    </ul>
     <router-outlet></router-outlet>
   </main>
 </div>

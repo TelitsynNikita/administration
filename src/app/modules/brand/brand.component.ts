@@ -5,4 +5,10 @@ import {Component} from "@angular/core";
   templateUrl: './brand.component.html',
   styleUrls: ['./brand.component.scss']
 })
-export class BrandComponent {}
+export class BrandComponent {
+  a: unknown = 12
+
+  constructor() {
+    console.log(this.a)
+  }
+}

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-root',
@@ -16,9 +17,14 @@ export class AppComponent {
     {title: 'Password', src: '/password', icon: 'bi bi-lock'},
     {title: 'Sign out', src: '/sign-out', icon: 'bi bi-box-arrow-in-right'},
   ]
+  data: string[] = []
   active = false
+
+  constructor(private http: HttpClient) {
+  }
 
   onToggle() {
     this.active = !this.active;
+    this.http.get('http://localhost:8080/api/send-info').subscribe((val: any) => this.data = val['data'])
   }
 }
